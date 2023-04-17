@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class PersonalBudgetManager {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask user for their monthly income
+        System.out.print("Enter your monthly income: ");
+        double income = scanner.nextDouble();
+
+        // Ask user for their monthly expenses
+        System.out.print("Enter your monthly expenses: ");
+        double expenses = scanner.nextDouble();
+
+        // Calculate the difference between income and expenses
+        double difference = income - expenses;
+
+        // Print the difference
+        if (difference > 0) {
+            System.out.printf("You have a surplus of $%.2f", difference);
+        } else if (difference < 0) {
+            System.out.printf("You have a deficit of $%.2f", Math.abs(difference));
+        } else {
+            System.out.println("You have a balanced budget.");
+        }
+
+        scanner.close();
+    }
+}
